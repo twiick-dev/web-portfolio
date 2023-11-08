@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.carrusel{
+    background-color: papayawhip;
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    position: relative;
+    overflow-y: hidden;
+}
+.carrusel article{
+    width: 100%;
+    height: 400px;
+}
+.carrusel article:nth-child(1){
+    background-color: salmon;
+}
+.carrusel article:nth-child(2){
+    background-color: navajowhite;
+}
+.carrusel article:nth-child(3){
+    background-color: lightskyblue;
+}
+.carrusel article:nth-child(4){
+    background-color: rgb(255, 173, 173);
+}
+.carrusel article:nth-child(5){
+    background-color: rgb(74, 226, 36);
+}
+.buttons{
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+.buttons button{
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.buttons button.active{
+    background-color: #F0D13D;
+}

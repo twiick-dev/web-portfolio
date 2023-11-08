@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <section class="carrusel">
+        <article id="carrusel-1">
+            carrusel 1
+        </article>
+        <article id="carrusel-2">
+            carrusel 2
+        </article>
+        <article id="carrusel-3">
+            carrusel 3
+        </article>
+        <article id="carrusel-4">
+            carrusel 4
+        </article>
+        <article id="carrusel-5">
+            carrusel 5
+        </article>
+        <div class="buttons">
+            <button id="carr-btn-1" class="active"></button>
+            <button id="carr-btn-2"></button>
+            <button id="carr-btn-3"></button>
+            <button id="carr-btn-4"></button>
+            <button id="carr-btn-5"></button>
+        </div>
+    </section>
+    <script>
+        let car1=document.querySelector('#carrusel-1')
+        let car2=document.querySelector('#carrusel-2')
+        let car3=document.querySelector('#carrusel-3')
+        let car4=document.querySelector('#carrusel-4')
+        let car5=document.querySelector('#carrusel-5')
+        let carbtn1=document.querySelector('#carr-btn-1')
+        let carbtn2=document.querySelector('#carr-btn-2')
+        let carbtn3=document.querySelector('#carr-btn-3')
+        let carbtn4=document.querySelector('#carr-btn-4')
+        let carbtn5=document.querySelector('#carr-btn-5')
+
+        let carrusel=[
+            [car1,carbtn1],
+            [car2,carbtn2],
+            [car3,carbtn3],
+            [car4,carbtn4],
+            [car5,carbtn5]
+        ]
+
+        carbtn1.addEventListener('click',()=>{
+            desactivarCarrusel()
+            carrusel[0][0].style.display='flex'
+            carrusel[0][1].classList.add('active')
+        })
+        carbtn2.addEventListener('click',()=>{
+            desactivarCarrusel()
+            carrusel[1][0].style.display='flex'
+            carrusel[1][1].classList.add('active')
+        })
+        carbtn3.addEventListener('click',()=>{
+            desactivarCarrusel()
+            carrusel[2][0].style.display='flex'
+            carrusel[2][1].classList.add('active')
+        })
+        carbtn4.addEventListener('click',()=>{
+            desactivarCarrusel()
+            carrusel[3][0].style.display='flex'
+            carrusel[3][1].classList.add('active')
+        })
+        carbtn5.addEventListener('click',()=>{
+            desactivarCarrusel()
+            carrusel[4][0].style.display='flex'
+            carrusel[4][1].classList.add('active')
+            
+        })
+        function desactivarCarrusel(){
+            car1.style.display='none'
+            car2.style.display='none'
+            car3.style.display='none'
+            car4.style.display='none'
+            car5.style.display='none'
+            carbtn1.classList.remove('active')
+            carbtn2.classList.remove('active')
+            carbtn3.classList.remove('active')
+            carbtn4.classList.remove('active')
+            carbtn5.classList.remove('active')
+        }
+        let loop=0
+        setInterval(()=>{
+            desactivarCarrusel()
+            carrusel[loop][0].style.display='flex'
+            carrusel[loop][1].classList.add('active')
+            loop++
+            if(loop>carrusel.length-1){
+                loop=0
+            }
+        },20000)
+    </script>
+</body>
+</html>
